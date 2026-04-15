@@ -1,5 +1,7 @@
+import { ProductTable } from '../features/product-table/components/ProductTable'
+
 function App() {
-  return <></>
+  return <ProductTable />
 }
 
 export default App
