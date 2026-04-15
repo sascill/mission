@@ -31,7 +31,6 @@
 mission/
 ├─ src/
 │  ├─ app/
-│  ├─ components/
 │  ├─ features/
 │  └─ pages/
 ├─ index.html
@@ -43,6 +42,5 @@ mission/
 
 ## 폴더 역할
 - `app`: 앱 진입점과 전역 스타일
-- `components`: 여러 화면이나 기능에서 함께 쓰는 공용 UI 컴포넌트
 - `pages`: 화면 단위 컴포넌트
 - `features`: 기능 단위 컴포넌트와 관련 파일
