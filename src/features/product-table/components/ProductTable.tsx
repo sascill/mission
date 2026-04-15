@@ -1,5 +1,4 @@
-import { products } from '../data/products'
-import type { ProductStatus } from '../types/product'
+import type { ProductStatus, Product } from '../types/product'
 import './ProductTable.css'
 
 const priceFormatter = new Intl.NumberFormat('ko-KR')
@@ -20,7 +19,11 @@ const getStatusClassName = (status: ProductStatus) => {
   return 'product-table__status product-table__status--active'
 }
 
-export function ProductTable() {
+interface ProductTableProps {
+  data: Product[]
+}
+
+export const ProductTable = ({ data }: ProductTableProps) => {
   return (
     <section className="product-table">
       <div className="product-table__scroll">
@@ -37,19 +40,19 @@ export function ProductTable() {
             </tr>
           </thead>
           <tbody>
-            {products.map((product) => (
-              <tr key={product.id}>
-                <td>{product.id}</td>
-                <td>{product.name}</td>
-                <td>{product.category}</td>
-                <td>{formatPrice(product.price)}</td>
-                <td>{product.stock}</td>
+            {data.map((item) => (
+              <tr key={item.id}>
+                <td>{item.id}</td>
+                <td>{item.name}</td>
+                <td>{item.category}</td>
+                <td>{formatPrice(item.price)}</td>
+                <td>{item.stock}</td>
                 <td>
-                  <span className={getStatusClassName(product.status)}>
-                    {product.status}
+                  <span className={getStatusClassName(item.status)}>
+                    {item.status}
                   </span>
                 </td>
-                <td>{formatDate(product.createdAt)}</td>
+                <td>{formatDate(item.createdAt)}</td>
               </tr>
             ))}
           </tbody>
