@@ -1,7 +1,7 @@
-import { ProductTable } from '../features/product-table/components/ProductTable'
+import { DashboardPage } from '../pages/dashboard/DashboardPage'
 
 function App() {
-  return <ProductTable />
+  return <DashboardPage />
 }
 
 export default App
