@@ -5,7 +5,14 @@ export type ProductCategory =
   | '식품'
   | '도서'
 
-export type ProductStatus = '판매중' | '품절' | '판매중지'
+export const PRODUCT_STATUSES = {
+  ON_SALE: '판매중',
+  SOLD_OUT: '품절',
+  DISCONTINUED: '판매중지',
+} as const
+
+export type ProductStatus =
+  (typeof PRODUCT_STATUSES)[keyof typeof PRODUCT_STATUSES]
 
 export interface Product {
   id: string
