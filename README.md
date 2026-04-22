@@ -8,6 +8,13 @@
 - 기능을 작은 단위의 GitHub Issue로 분리하는 연습
 - 하나의 이슈를 하나의 브랜치와 하나의 PR로 연결하는 흐름 익히기
 
+## 문서 링크
+
+백로그는 GitHub Wiki에서 관리하고, 작업 규칙은 프로젝트 내부 docs에서 관리합니다.
+
+- 백로그 관리: [GitHub Wiki](https://github.com/sascill/mission/wiki)
+- 작업 규칙 관리: [개발 워크플로 문서](./docs/development-workflow.md)
+
 ## 작업 규칙
 
 - 기능 작업은 `main` 브랜치에 직접 커밋하지 않는다
