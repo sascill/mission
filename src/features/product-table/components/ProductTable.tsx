@@ -1,4 +1,4 @@
-import type { ProductStatus, Product } from '../types/product'
+import { PRODUCT_STATUSES, type ProductStatus, type Product } from '../types/product'
 import './ProductTable.css'
 
 const priceFormatter = new Intl.NumberFormat('ko-KR')
@@ -8,11 +8,11 @@ const formatPrice = (price: number) => `${priceFormatter.format(price)}원`
 const formatDate = (createdAt: string) => createdAt.replaceAll('-', '.')
 
 const getStatusClassName = (status: ProductStatus) => {
-  if (status === '품절') {
+  if (status === PRODUCT_STATUSES.SOLD_OUT) {
     return 'product-table__status product-table__status--sold-out'
   }
 
-  if (status === '판매중지') {
+  if (status === PRODUCT_STATUSES.DISCONTINUED) {
     return 'product-table__status product-table__status--inactive'
   }
 

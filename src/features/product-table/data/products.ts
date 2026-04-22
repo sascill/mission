@@ -1,4 +1,9 @@
-import type { Product, ProductCategory, ProductStatus } from '../types/product'
+import {
+  PRODUCT_STATUSES,
+  type Product,
+  type ProductCategory,
+  type ProductStatus,
+} from '../types/product'
 
 interface ProductSeed {
   name: string
@@ -39,22 +44,22 @@ const formatDate = (date: Date) => {
 
 const getStatus = (index: number): ProductStatus => {
   if (index % 10 === 2 || index % 10 === 7) {
-    return '품절'
+    return PRODUCT_STATUSES.SOLD_OUT
   }
 
   if (index % 10 === 4) {
-    return '판매중지'
+    return PRODUCT_STATUSES.DISCONTINUED
   }
 
-  return '판매중'
+  return PRODUCT_STATUSES.ON_SALE
 }
 
 const getStock = (status: ProductStatus, index: number) => {
-  if (status === '품절') {
+  if (status === PRODUCT_STATUSES.SOLD_OUT) {
     return 0
   }
 
-  if (status === '판매중지') {
+  if (status === PRODUCT_STATUSES.DISCONTINUED) {
     return 4 + ((index * 3) % 11)
   }
 
